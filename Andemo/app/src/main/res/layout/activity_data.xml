@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.example.andemo.DataBean"/>
+        <variable
+            name="data_bean"
+            type="DataBean" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.MvvmDemo.DataActivity">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/rel1"
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+                <TextView
+                    android:id="@+id/dataTView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="50px"
+                    android:layout_marginBottom="10dp"
+                    android:hint="当前数据" />
+
+                <EditText
+                    android:id="@+id/dataEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/dataTView"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="50px"
+                    android:hint="待输入数据" />
+
+                <Button
+                    android:id="@+id/dataBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/dataEdit"
+                    android:layout_centerHorizontal="true"
+                    android:text="刷新" />
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_below="@id/rel1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <TextView
+                    android:id="@+id/dataVMTView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="50px"
+                    android:text="@={data_bean.data}"
+                    android:layout_marginBottom="10dp"
+                    android:hint="当前数据" />
+
+                <EditText
+                    android:id="@+id/dataVMEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/dataVMTView"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="50px"
+                    android:text="@={data_bean.data}"
+                    android:hint="待输入数据" />
+
+                <Button
+                    android:id="@+id/dataVMBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/dataVMEdit"
+                    android:layout_centerHorizontal="true"
+                    android:text="刷新" />
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
