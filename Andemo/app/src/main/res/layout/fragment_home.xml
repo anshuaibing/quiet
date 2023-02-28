@@ -61,6 +61,13 @@
             android:layout_below="@id/btnThre"
             android:text="RecyclerView"
             android:onClick="buttonClick"/>
+        <Button
+            android:id="@+id/btnFive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnFour"
+            android:text="GreenDao增删改查"
+            android:onClick="buttonClick"/>
 
     </RelativeLayout>
 

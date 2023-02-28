@@ -1,9 +1,5 @@
 package com.example.andemo.ui.MvvmDemo;
 
-
-
-
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.databinding.DataBindingUtil;
@@ -30,7 +26,6 @@ public class DataActivity extends AppCompatActivity {
     private TextView textView;
     private Button button;
     private String dataString;
-    private String dataVMstring;
     private DataBean dataBean;
 
     @SuppressLint({"SetTextI18n", "InlinedApi"})
@@ -38,15 +33,10 @@ public class DataActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data);
-//        ActivityDataBinding activityDataBinding=DataBindingUtil.setContentView(this,R.layout.activity_data);
         ActivityDataBinding activityDataBinding=DataBindingUtil.setContentView(this,R.layout.activity_data);
-//        peopleBean = new PeopleBean("NorthernBrain", 25);
 
         dataBean = new DataBean(new ObservableField<String>(""));
         activityDataBinding.setDataBean(dataBean);
-//        activityDataBinding.setDataBean(dataBean);
-//        activityDataBinding.dataVMTView.setText(dataVMstring);
-
 
         editText =(EditText) findViewById(R.id.dataEdit);
         textView =(TextView) findViewById(R.id.dataTView);

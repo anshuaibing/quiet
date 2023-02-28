@@ -27,15 +27,20 @@ import android.widget.Toast;
 import com.example.andemo.MainActivity;
 import com.example.andemo.R;
 import com.example.andemo.Regist;
-import com.example.andemo.data.DataBases.MySQLiteOpenHelper;
-import com.example.andemo.data.DataBases.User;
+//import com.example.andemo.data.DataBases.MySQLiteOpenHelper;
+//import com.example.andemo.data.DataBases.User;
+import com.example.andemo.data.DataBases.Users;
 import com.example.andemo.databinding.ActivityLoginBinding;
+import com.example.andemo.greendao.DaoManager;
+import com.example.andemo.greendao.UsersDao;
+
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
-    private MySQLiteOpenHelper mSQLiteOpenHelper;
+//    private MySQLiteOpenHelper mSQLiteOpenHelper;
     private EditText username;
     private EditText password;
 
@@ -43,8 +48,9 @@ public class LoginActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        mSQLiteOpenHelper = new MySQLiteOpenHelper(this);
+//        mSQLiteOpenHelper = new MySQLiteOpenHelper(this);
         initView();
+        DaoManager.getInstance().initGreenDao(this);//初始化
     }
     private void initView() {
         // 初始化控件
@@ -64,10 +70,12 @@ public class LoginActivity extends AppCompatActivity {
                 String name = username.getText().toString().trim();//.trim（）删除两边的空格
                 String password1 = password.getText().toString().trim();
                 if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(password1)) {//TextUtils.isEmpty（）输入框是空值或者你就敲了几下空格键该方法都会返回true
-                    ArrayList<User> data = mSQLiteOpenHelper.getAllData();//data为获取的user表内的user信息
+//                    ArrayList<User> data = mSQLiteOpenHelper.getAllData();// sqlite：data为获取的user表内的user信息
+                    UsersDao usersDao = DaoManager.getInstance().getDaoSession().getUsersDao();// greendao：data为获取的user表内的user信息
+                    List<Users> userList = usersDao.loadAll();
                     boolean match = false;
-                    for (int i = 0; i < data.size(); i++) {//遍历比较
-                        User user = data.get(i);//获取data里的第i个user信息
+                    for (int i = 0; i < userList.size(); i++) {//遍历比较
+                        Users user = userList.get(i);//获取userList里的第i个user信息
                         if (name.equals(user.getName()) && password1.equals(user.getPassword())) {//将信息与输入的信息进行对比
                             match = true;
                             break;

@@ -3,7 +3,8 @@ package com.example.andemo;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
-import com.example.andemo.data.DataBases.MySQLiteOpenHelper;
+//import com.example.andemo.data.DataBases.MySQLiteOpenHelper;
+import com.example.andemo.greendao.DaoManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +18,7 @@ import com.example.andemo.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    MySQLiteOpenHelper helper;
+//    MySQLiteOpenHelper helper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +37,12 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        helper=new MySQLiteOpenHelper(  MainActivity.this);
-        SQLiteDatabase db=helper.getWritableDatabase();
+
+        DaoManager.getInstance().initGreenDao(this);
+
+
+//        helper=new MySQLiteOpenHelper(  MainActivity.this);
+//        SQLiteDatabase db=helper.getWritableDatabase();
     }
 
 }

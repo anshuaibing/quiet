@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.andemo.greendao.GreeenDaoDemo;
 import com.example.andemo.ui.recycleview.ListviewTest;
 import com.example.andemo.databinding.FragmentHomeBinding;
 import com.example.andemo.ui.webview.PicActivity;
@@ -58,6 +59,7 @@ public class HomeFragment extends Fragment  {
         Button btnTwo = (Button) getActivity().findViewById(R.id.btnTwo);
         Button btnTre = (Button) getActivity().findViewById(R.id.btnThre);
         Button btnFour = (Button) getActivity().findViewById(R.id.btnFour);
+        Button btnFive = (Button) getActivity().findViewById(R.id.btnFive);
 
         button.setOnClickListener(new View.OnClickListener()
         {
@@ -104,6 +106,16 @@ public class HomeFragment extends Fragment  {
             {
 
                 Intent intent4 = new Intent(getActivity(), ListviewTest.class);
+                startActivity(intent4);
+            }
+        });
+        btnFive.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+
+                Intent intent4 = new Intent(getActivity(), GreeenDaoDemo.class);
                 startActivity(intent4);
             }
         });

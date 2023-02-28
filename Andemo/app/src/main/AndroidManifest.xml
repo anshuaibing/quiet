@@ -15,6 +15,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".greendao.GreeenDaoDemo"
+            android:exported="false" />
+        <activity
             android:name=".Regist"
             android:exported="false" />
         <activity

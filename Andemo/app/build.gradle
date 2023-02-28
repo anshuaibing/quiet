@@ -1,8 +1,22 @@
 plugins {
     id 'com.android.application'
 }
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao' // apply plugin
 
 android {
+
+    greendao {
+
+        schemaVersion 5  //数据库版本号，升级数据库需要修改版本号
+
+        daoPackage 'com.example.andemo.greendao'  //一般为app包名+生成文件的文件夹名
+
+        targetGenDir 'src/main/java'  //自动生成的greendao代码存放路径
+
+    }
+
+
     namespace 'com.example.andemo'
     compileSdk 33
     dataBinding {
@@ -11,7 +25,26 @@ android {
     buildFeatures {
         viewBinding true
     }
+
+
+
+    buildscript {
+        repositories {
+            maven{url 'https://maven.aliyun.com/repository/google'}
+            maven{url 'https://maven.aliyun.com/repository/jcenter'}
+            maven{url 'https://maven.aliyun.com/nexus/content/groups/public'}
+//            jcenter()
+//            mavenCentral() // add repository
+        }
+        dependencies {
+            classpath 'com.android.tools.build:gradle:7.1.2'
+            classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'  // add plugin
+        }
+    }
     defaultConfig {
+
+
+
         applicationId "com.example.andemo"
         minSdk 24
         targetSdk 33
@@ -50,5 +83,14 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation 'org.greenrobot:greendao:3.3.0' // add library
+
+    implementation 'org.greenrobot:greendao-generator:3.0.0'
+
+//    compile 'org.greenrobot:greendao:3.2.2'  // add library
+
+    // This is only needed if you want to use encrypted databases
+//    compile 'net.zetetic:android-database-sqlcipher:3.5.6' //加密库依赖（可选项）
 
 }

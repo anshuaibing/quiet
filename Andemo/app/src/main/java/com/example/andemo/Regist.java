@@ -10,16 +10,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.andemo.data.DataBases.MySQLiteOpenHelper;
+//import com.example.andemo.data.DataBases.MySQLiteOpenHelper;
+import com.example.andemo.data.DataBases.Users;
+import com.example.andemo.greendao.DaoManager;
 import com.example.andemo.ui.login.LoginActivity;
 
 public class Regist extends AppCompatActivity {
-    private MySQLiteOpenHelper mSQLiteOpenHelper;
+//    private MySQLiteOpenHelper mSQLiteOpenHelper;
 
     private EditText Username;
     private EditText tel;
-
-
 
     private EditText Password;
     private EditText RePassword;
@@ -29,7 +29,8 @@ public class Regist extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regist);
         initView();
-        mSQLiteOpenHelper = new MySQLiteOpenHelper(this);
+        DaoManager.getInstance().initGreenDao(this);
+//        mSQLiteOpenHelper = new MySQLiteOpenHelper(this);
     }
     private void initView(){
         Username = findViewById(R.id.regist_username);
@@ -51,15 +52,17 @@ public class Regist extends AppCompatActivity {
                 //获取用户输入的用户名、密码、验证码
                 String musername = Username.getText().toString().trim();
                 String mpassword = Password.getText().toString().trim();
-                Integer mtel= Integer.valueOf(tel.getText().toString().trim());
+                String mtel=tel.getText().toString().trim();
                 String mrepassword = RePassword.getText().toString().trim();
-
                 //注册验证
-
                 if (!TextUtils.isEmpty(musername) && !TextUtils.isEmpty(mpassword)) {
                     if(mpassword.equals(mrepassword)){
-
-                   mSQLiteOpenHelper.add(musername, mpassword,mtel);//将用户名和密码加入到数据库的表内中
+//                    mSQLiteOpenHelper.add(musername, mpassword,mtel);//将用户名和密码加入到数据库的表内中
+                    Users usersi = new Users();
+                    usersi.setName(musername);
+                    usersi.setPassword(mpassword);
+                    usersi.setTel(mtel);
+                    DaoManager.getInstance().getDaoSession().insert(usersi);
                     Intent intent2 = new Intent(this, LoginActivity.class);
                     startActivity(intent2);
                     finish();
@@ -68,7 +71,6 @@ public class Regist extends AppCompatActivity {
                     else {
                         Toast.makeText(this, "密码输入不一致！", Toast.LENGTH_SHORT).show();
                     }
-
                 } else {
                     Toast.makeText(this, "未完善信息，注册失败", Toast.LENGTH_SHORT).show();
                 }

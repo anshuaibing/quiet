@@ -31,7 +31,6 @@ public class ListviewTest extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listview_test);
         mRecyclerView = findViewById(R.id.recyclerview);
-        // 构造一些数据
         // 得到本地json文本内容
         String fileName = "person.json";   // 创建的json文件名称
         String personJson = LocalJsonResolutionUtils.getJson(this, fileName);// 调用getJson方法，获取json文件
