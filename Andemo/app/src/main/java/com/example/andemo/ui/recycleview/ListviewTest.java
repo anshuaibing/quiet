@@ -1,16 +1,16 @@
 package com.example.andemo.ui.recycleview;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.andemo.R;
 import com.google.gson.Gson;
@@ -42,6 +42,7 @@ public class ListviewTest extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(ListviewTest.this);// 初始化管理器
         mRecyclerView.setLayoutManager(layoutManager);// 为列表添加管理器
     }
+
 
     class MyAdapter extends RecyclerView.Adapter<MyViewHoder> {//重写适配器
 

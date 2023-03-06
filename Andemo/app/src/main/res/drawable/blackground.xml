@@ -4,5 +4,5 @@
         <solid android:color="#10DAE1" />
         <!--分别设置左上，右上，左下，右下-->
         <corners
-           android:radius="10dp" />
+           android:radius="15dp" />
     </shape>

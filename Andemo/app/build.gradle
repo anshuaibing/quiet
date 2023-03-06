@@ -87,7 +87,6 @@ dependencies {
     implementation 'org.greenrobot:greendao:3.3.0' // add library
 
     implementation 'org.greenrobot:greendao-generator:3.0.0'
-
 //    compile 'org.greenrobot:greendao:3.2.2'  // add library
 
     // This is only needed if you want to use encrypted databases
