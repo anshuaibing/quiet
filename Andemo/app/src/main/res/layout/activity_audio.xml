@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Media.AudioActivity"
+    android:orientation="vertical">
+    <Button
+        android:id="@+id/btnRecord"
+        android:layout_marginTop="@dimen/dp_200"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RECORD"/>
+    <Button
+        android:id="@+id/btnStop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stop"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/dp_10">
+
+        <Button
+            android:background="@drawable/myinfo"
+            android:id="@+id/btnPlayFast"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Play Fast"/>
+        <Button
+            android:background="@drawable/myinfo"
+            android:id="@+id/btnPlay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_5"
+            android:layout_weight="2"
+            android:text="Play"/>
+        <Button
+            android:background="@drawable/myinfo"
+            android:id="@+id/btnPlaySlow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Play Slow"/>
+    </LinearLayout>
+
+    <Button
+        android:background="@drawable/blackground"
+        android:id="@+id/btnSpeak"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Press to Speak"/>
+
+</LinearLayout>

@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" /> <!-- 应用使用蓝牙的权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" /> <!-- 启动设备发现或操作蓝牙设置的权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> <!-- 位置权限 -->
+    <!-- Android 10以上系统，需要ACCESS_FINE_LOCATION -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- Android 9以及以下系统，需要ACCESS_FINE_LOCATION -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
-
-
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -17,35 +26,53 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AnDemo"
         android:usesCleartextTraffic="true"
+        tools:replace="android:theme"
         tools:targetApi="31">
         <activity
+            android:name=".ui.handledemo.AsyncTaskActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.handledemo.HandleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.Media.AudioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.Media.VideoViewActivity"
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".ui.Media.VideoActivity" -->
+        <!-- android:exported="false" /> -->
+        <activity
+            android:name=".ui.Media.MediaRecordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.Media.MediaPlayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".httpURLconnectionTest.httpURL"
+            android:exported="false" />
+        <activity
             android:name=".greendao.GreeenDaoDemo"
-            android:exported="false"
-             />
+            android:exported="false" />
         <activity
             android:name=".Regist"
             android:exported="false" />
         <activity
             android:name=".ui.recycleview.ListviewTest"
-            android:exported="false"
-             />
+            android:exported="false" />
         <activity
             android:name=".ui.MvvmDemo.DataActivity"
-            android:exported="false"
-           />
+            android:exported="false" />
         <activity
             android:name=".ui.webview.webvieactivity"
-            android:exported="false"
-           />
+            android:exported="false" />
         <activity
             android:name=".ui.webview.PicActivity"
-            android:exported="false"
-             />
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:label="@string/title_activity_login"
-             />
+            android:label="@string/title_activity_login" />
         <activity
             android:name=".ui.login.LoginActivity"
             android:exported="true"

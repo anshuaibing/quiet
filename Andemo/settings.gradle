@@ -14,3 +14,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "AnDemo"
 include ':app'
+include ':jnidemo'
+
+include ':fingRoad'
+include ':fingRoad'

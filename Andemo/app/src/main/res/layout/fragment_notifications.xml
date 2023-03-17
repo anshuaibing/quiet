@@ -79,7 +79,6 @@
                 app:layout_constraintLeft_toRightOf="@+id/header"
                 app:layout_constraintTop_toTopOf="parent" />
 
-
         </LinearLayout>
 
         <LinearLayout
@@ -94,12 +93,14 @@
             app:layout_constraintTop_toBottomOf="@+id/LinearLayout2">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/myinfo"
+                android:layout_width="96dp"
+                android:layout_height="25dp"
                 android:layout_gravity="center_vertical"
-                android:text="个人资料 >"
+                android:background="@drawable/myinfo"
 
+                android:text="个人资料 >"
+                android:gravity="center"
+                android:textColor="@color/white"
                 android:textSize="15sp" />
 
             <ImageView
@@ -122,93 +123,89 @@
                 android:src="@drawable/camera" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraint2"
-            android:layout_marginHorizontal="5dp"
-            android:layout_marginTop="-25dp"
-            app:layout_constraintVertical_bias="0.1"
-            app:layout_constraintTop_toBottomOf="@+id/constraint_1"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_width="match_parent"
-            android:background="@drawable/whiteconer"
-            android:layout_height="100dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint2"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="-30dp"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintTop_toBottomOf="@+id/constraint_1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/whiteconer">
 
-            <ImageView
-                android:id="@+id/icam"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-               android:layout_marginTop="20dp"
-                android:gravity="center"
+        <ImageView
+            android:id="@+id/icam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:src="@drawable/me_icon_photo"
+            app:layout_constraintEnd_toStartOf="@id/tplay"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-                android:src="@drawable/me_icon_photo"
-                app:layout_constraintEnd_toStartOf="@id/tplay"
-                app:layout_constraintHorizontal_chainStyle="spread"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/iplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:src="@drawable/me_icon_demo"
+            app:layout_constraintEnd_toStartOf="@id/tbill"
+            app:layout_constraintStart_toEndOf="@id/tcam"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/iplay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:src="@drawable/me_icon_demo"
+        <ImageView
+            android:id="@+id/ibill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:src="@drawable/me_icon_order"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tplay"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tcam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="截图录像"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@id/tplay"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/icam" />
 
-                app:layout_constraintEnd_toStartOf="@id/tbill"
-                app:layout_constraintStart_toEndOf="@id/tcam"
-                app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="演示中心"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@id/tbill"
+            app:layout_constraintStart_toEndOf="@id/tcam"
+            app:layout_constraintTop_toBottomOf="@+id/iplay"  />
 
-            <ImageView
-                android:id="@+id/ibill"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:src="@drawable/me_icon_order"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/tplay"
-                app:layout_constraintTop_toTopOf="parent" />
-            <TextView
-                android:id="@+id/tcam"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="截图录像"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toStartOf="@id/tplay"
-                app:layout_constraintHorizontal_chainStyle="spread"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/icam" />
-
-            <TextView
-                android:id="@+id/tplay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="演示中心"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-
-                app:layout_constraintEnd_toStartOf="@id/tbill"
-                app:layout_constraintStart_toEndOf="@id/tcam"
-                app:layout_constraintTop_toBottomOf="@+id/iplay"  />
-
-            <TextView
-                android:id="@+id/tbill"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="订单"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/tplay"
-                app:layout_constraintTop_toBottomOf="@+id/ibill" />
+        <TextView
+            android:id="@+id/tbill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="订单"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tplay"
+            app:layout_constraintTop_toBottomOf="@+id/ibill" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         app:layout_constraintTop_toBottomOf="@+id/constraint2"
@@ -229,5 +226,3 @@
             android:background="@drawable/whiteconer" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
