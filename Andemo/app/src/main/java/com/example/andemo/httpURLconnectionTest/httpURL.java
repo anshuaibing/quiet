@@ -1,4 +1,4 @@
-package com.example.andemo.httpURLconnectionTest;
+package com.example.andemo.httpurlconnectiontest;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.andemo.R;
 
-public class httpURL extends AppCompatActivity {
+public class HttpUrl extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,19 +45,19 @@ public class httpURL extends AppCompatActivity {
                     hideAllWidget();
                     imgPic.setVisibility(View.VISIBLE);
                     imgPic.setImageBitmap(bitmap);
-                    Toast.makeText(httpURL.this, "图片加载完毕", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HttpUrl.this, "图片加载完毕", Toast.LENGTH_SHORT).show();
                     break;
                 case 0x002:
                     hideAllWidget();
                     scroll.setVisibility(View.VISIBLE);
                     txtshow.setText(detail);
-                    Toast.makeText(httpURL.this, "HTML代码加载完毕", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HttpUrl.this, "HTML代码加载完毕", Toast.LENGTH_SHORT).show();
                     break;
                 case 0x003:
                     hideAllWidget();
                     webView.setVisibility(View.VISIBLE);
                     webView.loadDataWithBaseURL("", detail, "text/html", "UTF-8", "");
-                    Toast.makeText(httpURL.this, "网页加载完毕", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HttpUrl.this, "网页加载完毕", Toast.LENGTH_SHORT).show();
                     break;
                 default:
                     break;
@@ -127,7 +127,7 @@ public class httpURL extends AppCompatActivity {
                 break;
             case R.id.three:
                 if (detail.equals("")) {
-                    Toast.makeText(httpURL.this, "先请求HTML先嘛~", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HttpUrl.this, "先请求HTML先嘛~", Toast.LENGTH_SHORT).show();
                 } else {
                     handler.sendEmptyMessage(0x003);
                 }

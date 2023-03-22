@@ -1,20 +1,17 @@
 package com.example.andemo.greendao;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.andemo.R;
-import com.example.andemo.data.DataBases.Users;
+import com.example.andemo.data.databases.Users;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class GreeenDaoDemo extends AppCompatActivity {

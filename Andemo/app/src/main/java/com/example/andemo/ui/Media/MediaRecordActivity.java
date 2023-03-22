@@ -1,4 +1,4 @@
-package com.example.andemo.ui.Media;
+package com.example.andemo.ui.media;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;

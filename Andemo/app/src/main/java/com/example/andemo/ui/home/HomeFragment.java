@@ -16,42 +16,30 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.andemo.R;
 import com.example.andemo.databinding.FragmentHomeBinding;
 import com.example.andemo.greendao.GreeenDaoDemo;
-import com.example.andemo.httpURLconnectionTest.httpURL;
-import com.example.andemo.ui.Media.MediaPlayActivity;
-import com.example.andemo.ui.MvvmDemo.DataActivity;
+import com.example.andemo.httpurlconnectiontest.HttpUrl;
+import com.example.andemo.ui.media.MediaPlayActivity;
+import com.example.andemo.ui.mvvmdemo.DataActivity;
 import com.example.andemo.ui.handledemo.AsyncTaskActivity;
 import com.example.andemo.ui.handledemo.HandleActivity;
 import com.example.andemo.ui.recycleview.ListviewTest;
+import com.example.andemo.ui.designpattern.singletondemo.SingletonActivity;
 import com.example.andemo.ui.webview.PicActivity;
-import com.example.andemo.ui.webview.webvieactivity;
+import com.example.andemo.ui.webview.WebviewActivity;
 import com.example.myapplication.JNIActivity;
 public class HomeFragment extends Fragment  {
 
     private FragmentHomeBinding binding;
     private Button button;
     private Button btnTwo;
-
     private EditText editText1;
-
-
-
-
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         HomeViewModel homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
-
-
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
-
-
-
-
 //        final TextView textView = binding.textHome;
-
         return root;
     }
 
@@ -68,6 +56,7 @@ public class HomeFragment extends Fragment  {
         Button btnEight = (Button) getActivity().findViewById(R.id.btnEight);
         Button btnNine = (Button) getActivity().findViewById(R.id.btnNine);
         Button btnTen = (Button) getActivity().findViewById(R.id.btnTen);
+        Button btnEleven = (Button) getActivity().findViewById(R.id.btnEleven);
 
         butOne.setOnClickListener(new View.OnClickListener()
         {
@@ -91,7 +80,7 @@ public class HomeFragment extends Fragment  {
             public void onClick(View v)
             {
 
-                Intent intent2 = new Intent(getActivity(), webvieactivity.class);
+                Intent intent2 = new Intent(getActivity(), WebviewActivity.class);
                 startActivity(intent2);
             }
         });
@@ -117,6 +106,7 @@ public class HomeFragment extends Fragment  {
                 startActivity(intent4);
             }
         });
+
         btnFive.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -127,16 +117,18 @@ public class HomeFragment extends Fragment  {
                 startActivity(intent4);
             }
         });
+
         btnSix.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
 
-                Intent intent5 = new Intent(getActivity(), httpURL.class);
+                Intent intent5 = new Intent(getActivity(), HttpUrl.class);
                 startActivity(intent5);
             }
         });
+
         btnSeven.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -147,6 +139,7 @@ public class HomeFragment extends Fragment  {
                 startActivity(intent7);
             }
         });
+
         btnEight.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -157,6 +150,7 @@ public class HomeFragment extends Fragment  {
                 startActivity(intent8);
             }
         });
+
         btnNine.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -167,6 +161,7 @@ public class HomeFragment extends Fragment  {
                 startActivity(intent9);
             }
         });
+
         btnTen.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -175,6 +170,17 @@ public class HomeFragment extends Fragment  {
 
                 Intent intent10 = new Intent(getActivity(), HandleActivity.class);
                 startActivity(intent10);
+            }
+        });
+
+        btnEleven.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+
+                Intent intent11 = new Intent(getActivity(), SingletonActivity.class);
+                startActivity(intent11);
             }
         });
 

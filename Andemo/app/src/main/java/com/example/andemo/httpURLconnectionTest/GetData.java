@@ -1,4 +1,4 @@
-package com.example.andemo.httpURLconnectionTest;
+package com.example.andemo.httpurlconnectiontest;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;

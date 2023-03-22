@@ -1,4 +1,4 @@
-package com.example.andemo.data.DataBases;
+package com.example.andemo.data.databases;
 
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Generated;

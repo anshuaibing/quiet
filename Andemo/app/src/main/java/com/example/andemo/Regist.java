@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.andemo.data.DataBases.Users;
+import com.example.andemo.data.databases.Users;
 import com.example.andemo.greendao.DaoManager;
 import com.example.andemo.ui.login.LoginActivity;
 
@@ -30,13 +30,13 @@ public class Regist extends AppCompatActivity {
         DaoManager.getInstance().initGreenDao(this);
 //        mSQLiteOpenHelper = new MySQLiteOpenHelper(this);
     }
+
     private void initView(){
         Username = findViewById(R.id.regist_username);
         Password = findViewById(R.id.regist_password);
         tel = findViewById(R.id.regist_tel);
         RePassword = findViewById(R.id.repassword);
     }
-
 
     public void onClick(View view) {
         switch (view.getId()) {

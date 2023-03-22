@@ -31,6 +31,7 @@ public class AsyncTaskActivity extends AppCompatActivity {
             }
         });
     }
+
     public class MyAsyncTask extends AsyncTask<Integer,Integer,String>
     {
         private TextView txt;
@@ -42,7 +43,6 @@ public class AsyncTaskActivity extends AppCompatActivity {
             this.txt = txt;
             this.pgbar = pgbar;
         }
-
 
         public class DelayOperator {
             //延时操作,用来模拟下载
@@ -79,8 +79,6 @@ public class AsyncTaskActivity extends AppCompatActivity {
 
         //在doBackground方法中,每次调用publishProgress方法都会触发该方法
         //运行在UI线程中,可对UI控件进行操作
-
-
         @Override
         protected void onProgressUpdate(Integer... values) {
             int value = values[0];

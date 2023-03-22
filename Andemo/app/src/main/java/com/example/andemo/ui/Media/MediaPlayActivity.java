@@ -1,4 +1,4 @@
-package com.example.andemo.ui.Media;
+package com.example.andemo.ui.media;
 
 import android.Manifest;
 import android.content.Intent;

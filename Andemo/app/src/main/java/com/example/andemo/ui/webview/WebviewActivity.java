@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.andemo.R;
 
-public class webvieactivity extends AppCompatActivity
+public class WebviewActivity extends AppCompatActivity
 {
     private FragmentManager fragmentManager = getFragmentManager();
     private EditText edit;

@@ -29,27 +29,48 @@
         tools:replace="android:theme"
         tools:targetApi="31">
         <activity
+            android:name=".ui.designpattern.prototypedemo.PrototypePatternActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.broadcast.BroadcastActivity"
+            android:exported="false" />
+
+        <receiver
+            android:name=".ui.broadcast.MyBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.broadcasttest.MY_BROADCAST" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".ui.designpattern.abstractfactorydemo.AbstractFactoryPatternDemoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.designpattern.singletondemo.SingletonActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.handledemo.AsyncTaskActivity"
             android:exported="false" />
         <activity
             android:name=".ui.handledemo.HandleActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.Media.AudioActivity"
+            android:name=".ui.media.AudioActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.Media.VideoViewActivity"
+            android:name=".ui.media.VideoViewActivity"
             android:exported="false" /> <!-- <activity -->
         <!-- android:name=".ui.Media.VideoActivity" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name=".ui.Media.MediaRecordActivity"
+            android:name=".ui.media.MediaRecordActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.Media.MediaPlayActivity"
+            android:name=".ui.media.MediaPlayActivity"
             android:exported="false" />
         <activity
-            android:name=".httpURLconnectionTest.httpURL"
+            android:name=".httpurlconnectiontest.HttpUrl"
             android:exported="false" />
         <activity
             android:name=".greendao.GreeenDaoDemo"
@@ -61,10 +82,10 @@
             android:name=".ui.recycleview.ListviewTest"
             android:exported="false" />
         <activity
-            android:name=".ui.MvvmDemo.DataActivity"
+            android:name=".ui.mvvmdemo.DataActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.webview.webvieactivity"
+            android:name=".ui.webview.WebviewActivity"
             android:exported="false" />
         <activity
             android:name=".ui.webview.PicActivity"

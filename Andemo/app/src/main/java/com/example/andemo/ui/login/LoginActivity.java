@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.andemo.MainActivity;
 import com.example.andemo.R;
 import com.example.andemo.Regist;
-import com.example.andemo.data.DataBases.Users;
+import com.example.andemo.data.databases.Users;
 import com.example.andemo.greendao.DaoManager;
 import com.example.andemo.greendao.UsersDao;
 

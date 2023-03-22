@@ -1,21 +1,17 @@
-package com.example.andemo.ui.MvvmDemo;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import androidx.databinding.DataBindingUtil;
-import androidx.databinding.ObservableField;
-
+package com.example.andemo.ui.mvvmdemo;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.andemo.DataBean;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ObservableField;
 
+import com.example.andemo.DataBean;
 import com.example.andemo.R;
 import com.example.andemo.databinding.ActivityDataBinding;
 

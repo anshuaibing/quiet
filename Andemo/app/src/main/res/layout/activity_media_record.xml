@@ -5,19 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.Media.MediaRecordActivity">
+    tools:context=".ui.media.MediaRecordActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:orientation="vertical">
+        <TextureView
+            android:id="@+id/textureView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"/>
+        <VideoView
+            android:id="@+id/videoPlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
 
 
-    <TextureView
-        android:id="@+id/textureView"
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:visibility="visible"/>
-    <VideoView
-        android:id="@+id/videoPlay"
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:visibility="gone"/>
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_record"

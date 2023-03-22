@@ -91,6 +91,13 @@
             android:layout_below="@id/btnNine"
             android:text="Handler"
             android:onClick="buttonClick"/>
+        <Button
+            android:id="@+id/btnEleven"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnTen"
+            android:text="单例模式"
+            android:onClick="buttonClick"/>
 
     </RelativeLayout>
 

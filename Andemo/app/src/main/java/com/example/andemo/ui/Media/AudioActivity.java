@@ -1,4 +1,4 @@
-package com.example.andemo.ui.Media;
+package com.example.andemo.ui.media;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -27,6 +27,11 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+/*
+* 音频部分，本打算实现获取本地音频列表功能，然后实现点击可以播放。现在只能实现播放上一次录制的音频。
+*
+* */
+
 public class AudioActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btnRecord;
     private Button btnStop ;
@@ -39,8 +44,7 @@ public class AudioActivity extends AppCompatActivity implements View.OnClickList
     int frequency = 11025;
     int inChannelConfig = AudioFormat.CHANNEL_IN_MONO;
     int outChannelConfig = AudioFormat.CHANNEL_OUT_MONO;
-    int audioFormat = AudioFormat.ENCODING_PCM_16BIT;//测试MP3，也可P
-
+    int audioFormat = AudioFormat.ENCODING_PCM_16BIT;//测试MP3，也可PCM
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +54,7 @@ public class AudioActivity extends AppCompatActivity implements View.OnClickList
         soundFile = new File(getExternalFilesDir(null), "andemo.pcm");
 
     }
+
     void init(){
         btnRecord=findViewById(R.id.btnRecord);
         btnStop=findViewById(R.id.btnStop);
@@ -62,6 +67,7 @@ public class AudioActivity extends AppCompatActivity implements View.OnClickList
         btnPlay.setOnClickListener(this);
         btnPlayFast.setOnClickListener(this);
         btnPlaySlow.setOnClickListener(this);
+
         btnSpeak.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent arg1) {
@@ -102,12 +108,14 @@ public class AudioActivity extends AppCompatActivity implements View.OnClickList
                         }
                     }
                 };
+
                 t.start();
                 break;
             case R.id.btnStop:
                 isRecording = false;
                 break;
             case R.id.btnPlay:
+
                 if (soundFile.exists()) {
                     try {
                         play(frequency);
@@ -118,6 +126,7 @@ public class AudioActivity extends AppCompatActivity implements View.OnClickList
 
                 break;
             case R.id.btnPlayFast:
+
                 if (soundFile.exists()) {
                     try {
                         play(frequency * 4 / 3);
@@ -128,6 +137,7 @@ public class AudioActivity extends AppCompatActivity implements View.OnClickList
 
                 break;
             case R.id.btnPlaySlow:
+
                 if (soundFile.exists()) {
                     try {
                         play(frequency * 3 / 4);
@@ -143,6 +153,7 @@ public class AudioActivity extends AppCompatActivity implements View.OnClickList
     }
 
     void record() throws IOException {
+
         // 动态权限申请
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, 1);
@@ -159,15 +170,16 @@ public class AudioActivity extends AppCompatActivity implements View.OnClickList
         int bufferSize = AudioRecord.getMinBufferSize(frequency, inChannelConfig, audioFormat);
         short[] buffer = new short[bufferSize];
         AudioRecord audioRecord = new AudioRecord(MediaRecorder.AudioSource.MIC, frequency, inChannelConfig, audioFormat, bufferSize);
-
         audioRecord.startRecording();
         isRecording = true;
+
         while(isRecording){
             int bufferRead = audioRecord.read(buffer, 0, bufferSize);
             for(int i=0; i<bufferRead; i++){
                 dos.writeShort(buffer[i]);
             }
         }
+
         audioRecord.stop();
         audioRecord.release();
 
@@ -201,6 +213,5 @@ public class AudioActivity extends AppCompatActivity implements View.OnClickList
         audioTrack.stop();
         //audioTrack.release();		// 不能马上release，因为write后是异步播放，此时还刚开始播放，release就不播放了
     }
-
 
 }
