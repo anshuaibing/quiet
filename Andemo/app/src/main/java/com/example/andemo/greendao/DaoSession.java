@@ -8,7 +8,7 @@ import org.greenrobot.greendao.database.Database;
 import org.greenrobot.greendao.identityscope.IdentityScopeType;
 import org.greenrobot.greendao.internal.DaoConfig;
 
-import com.example.andemo.data.databases.Users;
+import com.example.andemo.database.Users;
 
 import com.example.andemo.greendao.UsersDao;
 

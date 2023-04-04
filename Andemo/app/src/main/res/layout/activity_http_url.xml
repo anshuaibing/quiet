@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".httpurlconnectiontest.HttpUrl">
+    tools:context=".ui.httpurlconnectiondemo.httpURL">
     <TextView
         android:id="@+id/txtMenu"
         android:layout_width="match_parent"

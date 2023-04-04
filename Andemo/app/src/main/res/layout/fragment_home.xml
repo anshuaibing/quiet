@@ -1,104 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".ui.home.HomeFragment">
 
-
-
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:descendantFocusability="blocksDescendants"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/btnOne"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:text="看图片"
-            android:onClick="buttonClick"
             />
 
         <Button
             android:id="@+id/btnTwo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btnOne"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:text="网页浏览"
-            android:onClick="buttonClick"
-
             />
 
         <Button
             android:id="@+id/btnThre"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btnTwo"
-            android:text="数据show"
-            android:onClick="buttonClick"/>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="数据show" />
         <Button
             android:id="@+id/btnFour"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btnThre"
-            android:text="RecyclerView"
-            android:onClick="buttonClick"/>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="RecyclerView" />
         <Button
             android:id="@+id/btnFive"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btnFour"
-            android:text="GreenDao增删改查"
-            android:onClick="buttonClick"/>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="GreenDao增删改查" />
         <Button
             android:id="@+id/btnSix"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btnFive"
-            android:text="httpurl-get"
-            android:onClick="buttonClick"/>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="httpurl-get" />
         <Button
             android:id="@+id/btnSeven"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btnSix"
-            android:text="JNI计算器"
-            android:onClick="buttonClick"/>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="JNI计算器" />
         <Button
             android:id="@+id/btnEight"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btnSeven"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:text="AsyncTask" />
         <Button
             android:id="@+id/btnNine"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btnEight"
-            android:text="MediaPlay"
-            android:onClick="buttonClick"/>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="MediaPlay" />
         <Button
             android:id="@+id/btnTen"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btnNine"
-            android:text="Handler"
-            android:onClick="buttonClick"/>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Handler" />
         <Button
             android:id="@+id/btnEleven"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btnTen"
-            android:text="单例模式"
-            android:onClick="buttonClick"/>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="单例模式" />
+        <Button
+            android:id="@+id/btnTwelve"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Mediacodec视频压缩" />
+        <Button
+            android:id="@+id/btnThirteen"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="SurfaceView" />
+        <Button
+            android:id="@+id/btnFourteen"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="NV21预览" />
+        <Button
+            android:id="@+id/btnFifteen"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="mediacodec视频分离器和混合器"/>
+        <Button
+            android:id="@+id/btnSixteen"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="OPGLES绘制三角形"/>
 
-    </RelativeLayout>
+        <Button
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="@dimen/dp_5"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</ScrollView>

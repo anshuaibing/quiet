@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -16,22 +15,24 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.andemo.R;
 import com.example.andemo.databinding.FragmentHomeBinding;
 import com.example.andemo.greendao.GreeenDaoDemo;
-import com.example.andemo.httpurlconnectiontest.HttpUrl;
-import com.example.andemo.ui.media.MediaPlayActivity;
-import com.example.andemo.ui.mvvmdemo.DataActivity;
+import com.example.andemo.ui.cameraapidemo.NV21DataCallbackActivity;
+import com.example.andemo.ui.designpattern.singletondemo.SingletonActivity;
 import com.example.andemo.ui.handledemo.AsyncTaskActivity;
 import com.example.andemo.ui.handledemo.HandleActivity;
+import com.example.andemo.ui.httpurlconnectiondemo.httpURL;
+import com.example.andemo.ui.mediaextractorandmediamuxer.MediaExtractorAndMuxerActivity;
+import com.example.andemo.ui.mediarecordandplay.MediaPlayActivity;
+import com.example.andemo.ui.mediatranscode.videotranscode.TransActivity;
+import com.example.andemo.ui.mvvmDemo.DataActivity;
+import com.example.andemo.ui.openglesdemo.OpenGLESActivity;
 import com.example.andemo.ui.recycleview.ListviewTest;
-import com.example.andemo.ui.designpattern.singletondemo.SingletonActivity;
+import com.example.andemo.ui.surfaceviewdemo.SurfaceViewActivity;
 import com.example.andemo.ui.webview.PicActivity;
-import com.example.andemo.ui.webview.WebviewActivity;
+import com.example.andemo.ui.webview.webvieactivity;
 import com.example.myapplication.JNIActivity;
 public class HomeFragment extends Fragment  {
 
     private FragmentHomeBinding binding;
-    private Button button;
-    private Button btnTwo;
-    private EditText editText1;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -39,24 +40,28 @@ public class HomeFragment extends Fragment  {
                 new ViewModelProvider(this).get(HomeViewModel.class);
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-//        final TextView textView = binding.textHome;
         return root;
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Button butOne = (Button) getActivity().findViewById(R.id.btnOne);
-        Button btnTwo = (Button) getActivity().findViewById(R.id.btnTwo);
-        Button btnTre = (Button) getActivity().findViewById(R.id.btnThre);
-        Button btnFour = (Button) getActivity().findViewById(R.id.btnFour);
-        Button btnFive = (Button) getActivity().findViewById(R.id.btnFive);
-        Button btnSix = (Button) getActivity().findViewById(R.id.btnSix);
-        Button btnSeven = (Button) getActivity().findViewById(R.id.btnSeven);
-        Button btnEight = (Button) getActivity().findViewById(R.id.btnEight);
-        Button btnNine = (Button) getActivity().findViewById(R.id.btnNine);
-        Button btnTen = (Button) getActivity().findViewById(R.id.btnTen);
-        Button btnEleven = (Button) getActivity().findViewById(R.id.btnEleven);
+        Button butOne = getActivity().findViewById(R.id.btnOne);
+        Button btnTwo = getActivity().findViewById(R.id.btnTwo);
+        Button btnTre = getActivity().findViewById(R.id.btnThre);
+        Button btnFour = getActivity().findViewById(R.id.btnFour);
+        Button btnFive = getActivity().findViewById(R.id.btnFive);
+        Button btnSix = getActivity().findViewById(R.id.btnSix);
+        Button btnSeven = getActivity().findViewById(R.id.btnSeven);
+        Button btnEight = getActivity().findViewById(R.id.btnEight);
+        Button btnNine = getActivity().findViewById(R.id.btnNine);
+        Button btnTen = getActivity().findViewById(R.id.btnTen);
+        Button btnEleven = getActivity().findViewById(R.id.btnEleven);
+        Button btnTwelve = getActivity().findViewById(R.id.btnTwelve);
+        Button btnThirteen = getActivity().findViewById(R.id.btnThirteen);
+        Button btnFourteen = getActivity().findViewById(R.id.btnFourteen);
+        Button btnFifteen = getActivity().findViewById(R.id.btnFifteen);
+        Button btnSixteen = getActivity().findViewById(R.id.btnSixteen);
 
         butOne.setOnClickListener(new View.OnClickListener()
         {
@@ -80,7 +85,7 @@ public class HomeFragment extends Fragment  {
             public void onClick(View v)
             {
 
-                Intent intent2 = new Intent(getActivity(), WebviewActivity.class);
+                Intent intent2 = new Intent(getActivity(), webvieactivity.class);
                 startActivity(intent2);
             }
         });
@@ -124,7 +129,7 @@ public class HomeFragment extends Fragment  {
             public void onClick(View v)
             {
 
-                Intent intent5 = new Intent(getActivity(), HttpUrl.class);
+                Intent intent5 = new Intent(getActivity(), httpURL.class);
                 startActivity(intent5);
             }
         });
@@ -181,6 +186,59 @@ public class HomeFragment extends Fragment  {
 
                 Intent intent11 = new Intent(getActivity(), SingletonActivity.class);
                 startActivity(intent11);
+            }
+        });
+
+        btnTwelve.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+
+                Intent intent12 = new Intent(getActivity(), TransActivity.class);
+                startActivity(intent12);
+            }
+        });
+
+        btnThirteen.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+
+                Intent intent13 = new Intent(getActivity(), SurfaceViewActivity.class);
+                startActivity(intent13);
+            }
+        });
+
+        btnFourteen.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+
+                Intent intent14 = new Intent(getActivity(), NV21DataCallbackActivity.class);
+                startActivity(intent14);
+            }
+        });
+        btnFifteen.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+
+                Intent intent15 = new Intent(getActivity(), MediaExtractorAndMuxerActivity.class);
+                startActivity(intent15);
+            }
+        });
+        btnSixteen.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+
+                Intent intent15 = new Intent(getActivity(), OpenGLESActivity.class);
+                startActivity(intent15);
             }
         });
 

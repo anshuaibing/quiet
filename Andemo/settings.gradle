@@ -1,8 +1,22 @@
 pluginManagement {
     repositories {
         google()
+        jcenter()
+
         mavenCentral()
         gradlePluginPortal()
+        //远程仓库
+        maven { allowInsecureProtocol = true
+            url "https://jitpack.io"
+        }
+        // hms
+        maven { allowInsecureProtocol = true
+            url 'http://developer.huawei.com/repo/'
+        }
+        // fcm
+        maven {allowInsecureProtocol = true
+            url "https://maven.google.com"
+        }
     }
 }
 dependencyResolutionManagement {
@@ -10,6 +24,16 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        jcenter()
+
+        // hms
+        maven { allowInsecureProtocol = true
+            url 'http://developer.huawei.com/repo/'
+        }
+        //远程仓库
+        maven { allowInsecureProtocol = true
+            url "https://jitpack.io" }
+        maven { url "https://maven.google.com" }
     }
 }
 rootProject.name = "AnDemo"

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- declare-styleable 声明风格样式
+     name 风格样式的名称-->
+
+<!--    attrs 子元素-->
+<!--    name 属性名-->
+<!--    format 属性格式-->
+
+<!--    定义具体的属性，format 表示这个属性的值的类型，类型有以下几种：-->
+<!--    1、reference-->
+<!--    参考指定Theme中资源ID，这个类型的意思，就是你传的值可以是引用资源-->
+<!--    2、string 字符串，-->
+<!--    如果你想别人既能直接写字符串值，也可以用类似写"@string/test"引用资源的方式，可以写成 format="string|reference"-->
+<!--    3、color 颜色-->
+<!--    4、boolean 布尔值-->
+<!--    5、dimension 尺寸值-->
+<!--    6、float 浮点型-->
+<!--    7、integer 整型-->
+<!--    8、fraction 百分数-->
+<!--    9、enum 枚举。只能在提供的值里面选一个，如下：-->
+<!--    <attr name="language">-->
+<!--        <enum name="China" value="1">-->
+<!--        <enum name="English" value="2">-->
+<!--    </attr>-->
+<!--    10、flag 位或运算-->
+    <declare-styleable name="myView">
+        <attr name="textColor" format="color"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="text" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="RadarView">
+        <!--        颜色-->
+        <attr name="circleColor" format="color"/>
+        <!--        圆圈数量-->
+        <attr name="circleNum" format="integer"/>
+        <!--        扫描的颜色-->
+        <attr name="sweepColor" format="color"/>
+        <!--        显示交叉线-->
+        <attr name="showCross" format="boolean"/>
+        <!--        转速-->
+        <attr name="speed" format="float"/>
+        <!--        圆圈粗细-->
+        <attr name="lineWidth" format="integer"/>
+        <!--        圆圈间隔-->
+        <attr name="interval" format="integer"/>
+        <!--        扫描方向-->
+        <attr name="direction" format="boolean"/>
+    </declare-styleable>
+</resources>

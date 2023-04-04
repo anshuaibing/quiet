@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="com.example.andemo.DataBean"/>
+        <import type="com.example.andemo.ui.mvvmDemo.DataBean"/>
         <variable
             name="data_bean"
-            type="DataBean" />
+            type="com.example.andemo.ui.mvvmDemo.DataBean" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.mvvmdemo.DataActivity">
+        tools:context=".ui.mvvmDemo.DataActivity">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

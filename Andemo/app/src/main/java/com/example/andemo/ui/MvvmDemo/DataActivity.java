@@ -1,4 +1,4 @@
-package com.example.andemo.ui.mvvmdemo;
+package com.example.andemo.ui.mvvmDemo;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ObservableField;
 
-import com.example.andemo.DataBean;
 import com.example.andemo.R;
 import com.example.andemo.databinding.ActivityDataBinding;
 

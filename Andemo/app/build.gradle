@@ -57,6 +57,23 @@ android {
                 cppFlags ''
             }
         }
+
+
+
+        ndk {
+            //选择要添加的对应 cpu 类型的 .so 库。
+            abiFilters  'armeabi-v7a', 'arm64-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "7972d007dfa33457a00b47fd", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+//                HUAWEI_APPID : "107772009",
+//                HUAWEI_APPKEY : "048f419f0ac622523fff01df266425eda56aa46166be29d8f0769bc0cc528b5c",
+
+        ]
     }
 
     buildTypes {
@@ -66,8 +83,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_16
-        targetCompatibility JavaVersion.VERSION_16
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     externalNativeBuild {
         cmake {
@@ -109,4 +126,13 @@ dependencies {
     // This is only needed if you want to use encrypted databases
 //    compile 'net.zetetic:android-database-sqlcipher:3.5.6' //加密库依赖（可选项）
 
+
+    implementation 'cn.jiguang.sdk:jcore:4.1.0'  // 此处以JCore 4.1.0 版本为例。
+    implementation 'cn.jiguang.sdk:jpush:4.7.2'  // 此处以JPush 4.7.2 版本为例
+    // 接入华为厂商
+    implementation 'com.huawei.hms:push:6.3.0.300'
+    implementation 'cn.jiguang.sdk.plugin:huawei:4.7.2'// 极光厂商插件版本与接入 JPush 版本保持一致，下同
+
 }
+//apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.huawei.agconnect'

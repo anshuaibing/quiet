@@ -1,5 +1,6 @@
 package com.example.andemo;
 
+import android.content.IntentFilter;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,16 +11,20 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.andemo.databinding.ActivityMainBinding;
 import com.example.andemo.greendao.DaoManager;
+import com.example.andemo.ui.broadcastreceiver.MyBRReceiver;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+import cn.jpush.android.api.JPushInterface;
 
+public class MainActivity extends AppCompatActivity {
+    MyBRReceiver myReceiver;
     private ActivityMainBinding binding;
 //    MySQLiteOpenHelper helper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -34,10 +39,24 @@ public class MainActivity extends AppCompatActivity {
 
 
         DaoManager.getInstance().initGreenDao(this);
+        JPushInterface.setDebugMode(true);
+        JPushInterface.init(this);
 
-
+        myReceiver = new MyBRReceiver();
+        IntentFilter itFilter = new IntentFilter();
+        itFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+        registerReceiver(myReceiver, itFilter);
 //        helper=new MySQLiteOpenHelper(  MainActivity.this);
 //        SQLiteDatabase db=helper.getWritableDatabase();
     }
+
+
+    //别忘了将广播取消掉哦~
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(myReceiver);
+    }
+
 
 }

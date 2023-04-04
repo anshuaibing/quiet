@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.media.AudioActivity"
-    android:orientation="vertical">
+    tools:context=".ui.mediarecordandplay.AudioActivity"
+    android:orientation="vertical"
+    android:gravity="center">
     <Button
         android:id="@+id/btnRecord"
-        android:layout_marginTop="@dimen/dp_200"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="RECORD"/>
